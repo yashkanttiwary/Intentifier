@@ -34,7 +34,7 @@ router.post('/gemini/test-key', async (req, res) => {
   try {
     const ai = new GoogleGenAI({ apiKey: (req as any).geminiApiKey });
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-2.5-flash',
       contents: 'Respond with a valid JSON object: {"status": "ok"}',
       config: { responseMimeType: 'application/json' }
     });
@@ -54,7 +54,7 @@ router.post('/gemini/clarify-intent', async (req, res) => {
     
     // We import schema dynamically up top or assume it's enforced by the prompt JSON config
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-2.5-flash',
       contents: prompt,
       config: { responseMimeType: 'application/json' }
     });
@@ -74,7 +74,7 @@ router.post('/gemini/generate-plan', async (req, res) => {
       
     const ai = new GoogleGenAI({ apiKey: (req as any).geminiApiKey });
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-2.5-flash',
       contents: prompt,
       config: { responseMimeType: 'application/json' }
     });
@@ -94,7 +94,7 @@ router.post('/gemini/generate-rewards', async (req, res) => {
       
     const ai = new GoogleGenAI({ apiKey: (req as any).geminiApiKey });
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-2.5-flash',
       contents: prompt,
       config: { responseMimeType: 'application/json' }
     });
